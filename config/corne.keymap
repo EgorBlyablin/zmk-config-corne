@@ -85,7 +85,7 @@
             compatible = "zmk,behavior-tap-dance";
             label = "DOT_COMMA";
             #binding-cells = <0>;
-            bindings = <&kp KP_DOT>, <&kp KP_COMMA>;
+            bindings = <&kp DOT>, <&kp COMMA>;
         };
 
         COLON_SEMICOLON: COLON_SEMICOLON {
@@ -93,6 +93,13 @@
             label = "COLON_SEMICOLON";
             #binding-cells = <0>;
             bindings = <&kp COLON>, <&kp SEMICOLON>;
+        };
+
+        CTRL_ALT_DANCE: CTRL_ALT_DANCE {
+            compatible = "zmk,behavior-tap-dance";
+            label = "CTRL_ALT_DANCE";
+            #binding-cells = <0>;
+            bindings = <&kp LCTRL>, <&kp LEFT_ALT>;
         };
     };
 
@@ -107,10 +114,10 @@
             //                    | GUI | LWR | SPC |   | ENT | RSE  | ALT |
 
             bindings = <
-&kp ESCAPE  &kp Q  &kp W  &kp E         &kp R      &kp T        &kp Y      &kp U  &kp I           &kp O             &kp P              &kp BSPC
-&kp TAB     &kp A  &kp S  &kp D         &kp F      &kp G        &kp H      &kp J  &kp K           &kp L             &mo 2              &kp DELETE
-&kp LSHFT   &kp Z  &kp X  &kp C         &kp V      &kp B        &kp N      &kp M  &DOT_COMMA      &COLON_SEMICOLON  &kp C_VOLUME_DOWN  &kp C_VOLUME_UP
-                          &kp LEFT_ALT  &kp LCTRL  &kp SPACE    &kp SPACE  &mo 1  &studio_unlock
+&kp ESCAPE  &kp Q  &kp W  &kp E         &kp R            &kp T        &kp Y      &kp U  &kp I             &kp O             &kp P              &kp BSPC
+&kp TAB     &kp A  &kp S  &kp D         &kp F            &kp G        &kp H      &kp J  &kp K             &kp L             &mo 2              &kp DELETE
+&kp LSHFT   &kp Z  &kp X  &kp C         &kp V            &kp B        &kp N      &kp M  &DOT_COMMA        &COLON_SEMICOLON  &kp C_VOLUME_DOWN  &kp C_VOLUME_UP
+                          &kp LEFT_GUI  &CTRL_ALT_DANCE  &kp SPACE    &kp SPACE  &mo 1  &kp K_PLAY_PAUSE
             >;
         };
 
