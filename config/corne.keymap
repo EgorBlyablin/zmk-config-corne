@@ -46,36 +46,14 @@
             bindings = <&kp K_MUTE>;
             key-positions = <35 23>;
         };
+
+        Enter {
+            bindings = <&kp RETURN>;
+            key-positions = <38 39>;
+        };
     };
 
     behaviors {
-        ss_hs_modmorph: ss_hs_modmorph {
-            compatible = "zmk,behavior-mod-morph";
-            label = "SS_HS_MODMORPH";
-            bindings = <&kp M>, <&kp RIGHT_BRACKET>;
-
-            #binding-cells = <0>;
-            mods = <(MOD_LSFT|MOD_RSFT)>;
-        };
-
-        kh_hs_tapdance: kh_hs_tapdance {
-            compatible = "zmk,behavior-tap-dance";
-            label = "KH_HS_TAPDANCE";
-            #binding-cells = <0>;
-            tapping-term-ms = <200>;
-            bindings = <&kp LEFT_BRACKET>, <&kp RIGHT_BRACKET>;
-        };
-
-        hrm: hrm {
-            compatible = "zmk,behavior-hold-tap";
-            #binding-cells = <2>;
-            flavor = "tap-preferred";
-            tapping-term-ms = <200>;
-            quick-tap-ms = <200>;
-            require-prior-idle-ms = <125>;
-            bindings = <&kp>, <&kp>;
-        };
-
         DOT_COMMA: DOT_COMMA {
             compatible = "zmk,behavior-tap-dance";
             label = "DOT_COMMA";
@@ -103,15 +81,6 @@
             tapping-term-ms = <250>;
         };
 
-        BACKSPACE_DELETE_DANCE: BACKSPACE_DELETE_DANCE {
-            compatible = "zmk,behavior-tap-dance";
-            label = "BACKSPACE_DELETE_DANCE";
-            #binding-cells = <0>;
-            bindings = <&kp BACKSPACE>, <&kp DELETE>;
-
-            tapping-term-ms = <250>;
-        };
-
         APOS_QUOTE_DANCE: APOS_QUOTE_DANCE {
             compatible = "zmk,behavior-tap-dance";
             label = "APOS_QUOTE_DANCE";
@@ -132,10 +101,10 @@
             //                    | GUI | LWR | SPC |   | ENT | RSE  | ALT |
 
             bindings = <
-&kp ESCAPE    &kp Q  &kp W  &kp E            &kp R           &kp T        &kp Y      &kp U  &kp I             &kp O             &kp P              &BACKSPACE_DELETE_DANCE
-&kp TAB       &kp A  &kp S  &kp D            &kp F           &kp G        &kp H      &kp J  &kp K             &kp L             &mo 2              &kp C_VOLUME_UP
-&kp LEFT_GUI  &kp Z  &kp X  &kp C            &kp V           &kp B        &kp N      &kp M  &DOT_COMMA        &COLON_SEMICOLON  &APOS_QUOTE_DANCE  &kp C_VOLUME_DOWN
-                            &CTRL_ALT_DANCE  &kp LEFT_SHIFT  &kp SPACE    &kp ENTER  &mo 1  &kp K_PLAY_PAUSE
+&kp ESCAPE       &kp Q  &kp W  &kp E         &kp R           &kp T        &kp Y      &kp U  &kp I             &kp O             &kp P              &kp BACKSPACE
+&kp TAB          &kp A  &kp S  &kp D         &kp F           &kp G        &kp H      &kp J  &kp K             &kp L             &mo 2              &kp C_VOLUME_UP
+&CTRL_ALT_DANCE  &kp Z  &kp X  &kp C         &kp V           &kp B        &kp N      &kp M  &DOT_COMMA        &COLON_SEMICOLON  &APOS_QUOTE_DANCE  &kp C_VOLUME_DOWN
+                               &kp LEFT_GUI  &kp LEFT_SHIFT  &kp SPACE    &kp SPACE  &mo 1  &kp K_PLAY_PAUSE
             >;
         };
 
@@ -149,7 +118,7 @@
             bindings = <
 &trans  &kp F1        &kp F2        &kp F3        &kp F4        &kp F5       &kp F6         &kp F7            &kp F8        &kp F9        &kp F10       &kp F11
 &trans  &kp NUMBER_1  &kp NUMBER_2  &kp NUMBER_3  &kp NUMBER_4  &kp N5       &kp NUMBER_6   &kp NUMBER_7      &kp NUMBER_8  &kp NUMBER_9  &kp NUMBER_0  &kp F12
-&trans  &kp PLUS      &kp MINUS     &kp ASTERISK  &kp SLASH     &kp EQUAL    &kp LESS_THAN  &kp GREATER_THAN  &kp TILDE     &trans        &bt BT_SEL 0  &bt BT_SEL 1
+&trans  &kp PLUS      &kp MINUS     &kp ASTERISK  &kp SLASH     &kp EQUAL    &kp LESS_THAN  &kp GREATER_THAN  &kp GRAVE     &trans        &bt BT_SEL 0  &bt BT_SEL 1
                                     &trans        &trans        &trans       &trans         &trans            &trans
             >;
         };
